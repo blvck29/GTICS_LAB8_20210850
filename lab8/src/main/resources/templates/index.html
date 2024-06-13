@@ -17,18 +17,14 @@
                 <th>Pokemon</th>
                 <th>Lugar de Captura</th>
                 <th>Probabilidad de Captura</th>
-                <th></th>
-                <th></th>
             </tr>
             </thead>
             <tbody>
-            <tr th:each="pok : ${pokeTeam}">
+            <tr th:each="poke : ${pokeTeam}">
                 <td th:text="${user.getName()}"></td>
-                <td th:text="${pok.getName()}"></td>
-                <td th:text="${pok.getPhone()}"></td>
-                <td th:text="${pok.getAge()}"></td>
-                <td><a class="btn btn-primary" th:href="@{'/edit_tec' + '?id=' + ${tec.getTechnicianID()}}">Editar</a>
-                </td>
+                <td th:text="${poke}"></td>
+                <td th:text="${poke}"></td>
+                <td th:text="${poke}"></td>
             </tr>
             </tbody>
         </table>

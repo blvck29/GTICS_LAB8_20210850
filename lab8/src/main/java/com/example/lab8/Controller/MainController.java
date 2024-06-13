@@ -51,7 +51,7 @@ public class MainController {
     @GetMapping("/list")
     public String pokeList(Model model){
 
-        List<Pokemon> pokeTeam = pokemonRepo.findAll();
+        List<UserPokemon> pokeTeam = userPokemonRepo.findAll();
         User user = (User) userRepo.findById(1);
 
         model.addAttribute("pokeTeam", pokeTeam);
