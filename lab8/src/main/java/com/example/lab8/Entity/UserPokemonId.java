@@ -7,13 +7,14 @@ import lombok.Setter;
 
 import java.io.Serializable;
 
+@Embeddable
 @Getter
 @Setter
-@Embeddable
 public class UserPokemonId implements Serializable {
-    @Column(name = "iduser", nullable = false)
-    private Integer idUser;
+    @Column(name = "userId", nullable = false)
+    private Integer usuario;
 
-    @Column(name = "idpokemon", nullable = false)
-    private Integer idPokemon;
+    @Column(name = "pokeId", nullable = false)
+    private Integer pokemon;
+
 }

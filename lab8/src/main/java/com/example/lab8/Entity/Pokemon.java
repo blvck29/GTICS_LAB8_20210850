@@ -13,7 +13,7 @@ import lombok.Setter;
 @Table(name = "pokemon")
 public class Pokemon {
     @Id
-    private Integer id;
+    private Integer pokemonId;
     @Column(name = "name")
     private String name;
     @Column(name = "encounter")
