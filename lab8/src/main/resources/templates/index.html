@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="~{fragments/navbar.html :: header( title = 'Tecnicos')}"></head>
+<body>
+<main>
+
+    <div class="container px-4 pb-5">
+        <nav th:replace="~{fragments/navbar.html :: navbar( active = 'Pokemon')}"></nav>
+        <h1 class="pb-2 border-bottom">Lista de Pokemons</h1>
+        <a class="btn btn-primary mt-4 mb-4" th:href="@{'/capture'}">Capturar Pokemon</a>
+        <div th:if="${msg != null}" th:text="${msg}" class="alert alert-success" role="alert"></div>
+
+        <table class="table">
+            <thead>
+            <tr>
+                <th>Player</th>
+                <th>Pokemon</th>
+                <th>Lugar de Captura</th>
+                <th>Probabilidad de Captura</th>
+                <th></th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr th:each="pok : ${pokeTeam}">
+                <td th:text="${user.getName()}"></td>
+                <td th:text="${pok.getName()}"></td>
+                <td th:text="${pok.getPhone()}"></td>
+                <td th:text="${pok.getAge()}"></td>
+                <td><a class="btn btn-primary" th:href="@{'/edit_tec' + '?id=' + ${tec.getTechnicianID()}}">Editar</a>
+                </td>
+            </tr>
+            </tbody>
+        </table>
+    </div>
+
+
+
+</main>
+<script th:replace="~{fragments/navbar.html :: footer-bootstrap}"></script>
+</body>
+</html>
